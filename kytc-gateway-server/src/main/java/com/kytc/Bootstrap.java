@@ -10,7 +10,6 @@ package com.kytc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Author: 何志同
@@ -18,7 +17,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @Description:
  **/
 @SpringCloudApplication
-@EnableEurekaClient
 @EnableDiscoveryClient
 public class Bootstrap {
     public static void main(String[] args) {

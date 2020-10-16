@@ -8,9 +8,23 @@ spring:
       discovery:
         locator:
           enabled: true
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+    consul:
+      discovery:
+        enabled: true
+        register: true
+        deregister: true
+        prefer-ip-address: true
+        health-check-interval: 30s
+        health-check-critical-timeout: 30s
+        health-check-path: /actuator/info
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        format: YAML
+        data-key: data
+        watch:
+          enabled: true
+          delay: 10000
+          wait-time: 30
