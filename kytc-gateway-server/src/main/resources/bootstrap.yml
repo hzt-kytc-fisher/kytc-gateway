@@ -1,6 +1,8 @@
 server:
-  port: 8080
+  port: 8084
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: kytc-gateway
   cloud:
@@ -28,3 +30,15 @@ spring:
           enabled: true
           delay: 10000
           wait-time: 30
+
+apollo:
+  bootstrap:
+    enabled: true
+    namespaces: TEST1.auth
+    eagerLoad:
+      enabled: true
+  cacheDir: /opt/data/some-cache-dir
+  meta: http://localhost:8080
+app:
+  id: kytc-gateway
+  name: kytc-gateway

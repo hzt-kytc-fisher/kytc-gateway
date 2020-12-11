@@ -7,6 +7,7 @@
  */
 package com.kytc;
 
+import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -18,6 +19,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  **/
 @SpringCloudApplication
 @EnableDiscoveryClient
+@EnableApolloConfig
 public class Bootstrap {
     public static void main(String[] args) {
         SpringApplication.run(Bootstrap.class,args);
